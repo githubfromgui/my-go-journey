@@ -32,20 +32,16 @@ func main() {
 	fmt.Printf("Median value:\t\t%v\n", mmType.CalcMedian())
 }
 
-func (mm *MeanMedian) Sort() {
-	sort.Ints(mm.numbers)
-}
-
 // return the minimum value
 func (mm *MeanMedian) GetMinValue() float64 {
-	mm.Sort() // sort the numbers
+	sort.Ints(mm.numbers) // sort the numbers
 
 	return float64(mm.numbers[0])
 }
 
 // return the maximum value
 func (mm *MeanMedian) GetMaxValue() float64 {
-	mm.Sort() // sort the numbers
+	sort.Ints(mm.numbers) // sort the numbers
 
 	return float64(mm.numbers[len(mm.numbers)-1])
 }
@@ -53,7 +49,7 @@ func (mm *MeanMedian) GetMaxValue() float64 {
 // calculate the range values
 // last value - first value
 func (mm *MeanMedian) CalcRangeValues() float64 {
-	mm.Sort() // sort the numbers
+	sort.Ints(mm.numbers) // sort the numbers
 
 	return float64(mm.numbers[len(mm.numbers)-1]) - float64(mm.numbers[0])
 }
@@ -79,7 +75,7 @@ func (mm *MeanMedian) CalcMean() float64 {
 // if the total of numbers is even
 //	calculate the "mean" of the middle two values
 func (mm *MeanMedian) CalcMedian(n ...int) float64 {
-	mm.Sort() // sort the numbers
+	sort.Ints(mm.numbers) // sort the numbers
 
 	mNumber := len(mm.numbers) / 2
 
