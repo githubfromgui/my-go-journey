@@ -2,28 +2,6 @@ package calculate_average_mean_median
 
 import "testing"
 
-func TestMeanMedian_Sort(t *testing.T) {
-	tables := []struct {
-		MeanMedian
-		rightOrder []int
-	}{
-		{MeanMedian{
-			numbers: []int{
-				11, 3, 2, 5, 7, 1,
-			},
-		}, []int{1, 2, 3, 5, 7, 11}},
-	}
-
-	for _, table := range tables {
-		table.Sort()
-		for i, v := range table.numbers {
-			if v != table.rightOrder[i] {
-				t.Errorf("Sort() returned the wrong order %v, supposed to be %v.", table.numbers, table.rightOrder)
-			}
-		}
-	}
-}
-
 func TestMeanMedian_GetMinValue(t *testing.T) {
 	tables := []struct {
 		MeanMedian
