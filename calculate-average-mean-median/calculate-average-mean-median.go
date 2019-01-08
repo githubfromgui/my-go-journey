@@ -19,6 +19,8 @@ func main() {
 			1, 2, 3, 4,
 		},
 	}
+	
+	sort.Ints(mmType.numbers) // sort
 
 	fmt.Printf("Sorted numbers:\t\t%v\n", mmType.numbers)
 	fmt.Println("------------------")
