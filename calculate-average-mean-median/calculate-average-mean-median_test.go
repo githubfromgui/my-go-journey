@@ -1,3 +1,12 @@
+/* - TESTS -
+Simple example of calculations
+involving the concepts of
+MEAN and MEDIAN
+
+Author: Guilherme Ferreira (guilhermeaferreira_t at yahoo dot com dot br)
+https://guilherme-ferreira.me
+*/
+
 package calculate_average_mean_median
 
 import "testing"
