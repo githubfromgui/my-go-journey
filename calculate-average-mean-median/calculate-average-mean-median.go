@@ -24,8 +24,7 @@ func main() {
 	// range of int numbers
 	mmType := MeanMedian{
 		numbers: []int{
-			//1671, 1817, 1763, 1733, 1722, 1745, 1773, 1778, 1725, 1696, 1689, 1718, 1735, 1705, 1734,
-			1, 2, 3, 4,
+			1, 2, 3, 4, // list of ints
 		},
 	}
 	
