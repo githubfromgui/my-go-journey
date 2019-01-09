@@ -62,7 +62,7 @@ func (mm *MeanMedian) GetMaxValue() float64 {
 func (mm *MeanMedian) CalcRangeValues() float64 {
 	sort.Ints(mm.numbers) // sort the numbers
 
-	return float64(mm.numbers[len(mm.numbers)-1]) - float64(mm.numbers[0])
+	return mm.GetMaxValue() - mm.GetMinValue()
 }
 
 // calculate the "mean" value
