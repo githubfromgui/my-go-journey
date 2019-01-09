@@ -21,7 +21,7 @@ type MeanMedian struct {
 }
 
 func main() {
-	// range of int numbers
+	// range of numbers
 	mmType := MeanMedian{
 		numbers: []float64{
 			1, 2, 3, 4, // numbers
@@ -65,7 +65,7 @@ func (mm *MeanMedian) CalcRangeValues() float64 {
 }
 
 // calculate the "mean" value
-// sum of all the int values
+// sum of all the values
 // divided by its quantity
 func (mm *MeanMedian) CalcMean() float64 {
 	total := 0.0
@@ -84,7 +84,7 @@ func (mm *MeanMedian) CalcMean() float64 {
 //
 // if the total of numbers is even
 //	calculate the "mean" of the middle two values
-func (mm *MeanMedian) CalcMedian(n ...int) float64 {
+func (mm *MeanMedian) CalcMedian(n ...float64) float64 {
 	sort.Float64s(mm.numbers) // sort the numbers
 
 	mNumber := len(mm.numbers) / 2
