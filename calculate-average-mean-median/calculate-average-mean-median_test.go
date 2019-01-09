@@ -17,7 +17,7 @@ func TestMeanMedian_GetMinValue(t *testing.T) {
 		min float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				13, 7, 11, 27, 3,
 			},
 		}, 3},
@@ -38,7 +38,7 @@ func TestMeanMedian_GetMaxValue(t *testing.T) {
 		max float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				13, 7, 11, 27, 3,
 			},
 		}, 27},
@@ -59,7 +59,7 @@ func TestMeanMedian_CalcRangeValues(t *testing.T) {
 		r float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				3, 4, 2, 6,
 			},
 		}, 4},
@@ -80,7 +80,7 @@ func TestMeanMedian_CalcMean(t *testing.T) {
 		r float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				4, 4, 2, 2,
 			},
 		}, 3},
@@ -101,7 +101,7 @@ func TestMeanMedian_CalcMedianOdd(t *testing.T) {
 		r float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				3, 4, 2, 6, 5,
 			},
 		}, 4},
@@ -122,7 +122,7 @@ func TestMeanMedian_CalcMedianEven(t *testing.T) {
 		r float64
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				3, 4, 2, 6,
 			},
 		}, 3.5},
@@ -143,17 +143,17 @@ func TestMeanMedian_IsOdd(t *testing.T) {
 		r bool
 	}{
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				1, 2,
 			},
 		}, false},
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				1, 1, 1, 4,
 			},
 		}, false},
 		{MeanMedian{
-			numbers: []int{
+			numbers: []float64{
 				1, 1, 1, 1, 5,
 			},
 		}, true},
