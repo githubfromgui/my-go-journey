@@ -17,18 +17,18 @@ import (
 
 // type
 type MeanMedian struct {
-	numbers []int
+	numbers []float64
 }
 
 func main() {
 	// range of int numbers
 	mmType := MeanMedian{
-		numbers: []int{
-			1, 2, 3, 4, // list of ints
+		numbers: []float64{
+			1, 2, 3, 4, // numbers
 		},
 	}
-	
-	sort.Ints(mmType.numbers) // sort
+
+	sort.Float64s(mmType.numbers) // sort
 
 	fmt.Printf("Sorted numbers:\t\t%v\n", mmType.numbers)
 	fmt.Println("------------------")
@@ -44,22 +44,22 @@ func main() {
 
 // return the minimum value
 func (mm *MeanMedian) GetMinValue() float64 {
-	sort.Ints(mm.numbers) // sort the numbers
+	sort.Float64s(mm.numbers) // sort the numbers
 
-	return float64(mm.numbers[0])
+	return mm.numbers[0]
 }
 
 // return the maximum value
 func (mm *MeanMedian) GetMaxValue() float64 {
-	sort.Ints(mm.numbers) // sort the numbers
+	sort.Float64s(mm.numbers) // sort the numbers
 
-	return float64(mm.numbers[len(mm.numbers)-1])
+	return mm.numbers[len(mm.numbers)-1]
 }
 
 // calculate the range values
 // last value - first value
 func (mm *MeanMedian) CalcRangeValues() float64 {
-	sort.Ints(mm.numbers) // sort the numbers
+	sort.Float64s(mm.numbers) // sort the numbers
 
 	return mm.GetMaxValue() - mm.GetMinValue()
 }
@@ -68,14 +68,14 @@ func (mm *MeanMedian) CalcRangeValues() float64 {
 // sum of all the int values
 // divided by its quantity
 func (mm *MeanMedian) CalcMean() float64 {
-	total := 0
+	total := 0.0
 
 	for _, v := range mm.numbers {
 		total += v
 	}
 
 	// IMPORTANT: return was rounded!
-	return math.Round(float64(total) / float64(len(mm.numbers)))
+	return math.Round(total / float64(len(mm.numbers)))
 }
 
 // calculate the "median" value
@@ -85,15 +85,15 @@ func (mm *MeanMedian) CalcMean() float64 {
 // if the total of numbers is even
 //	calculate the "mean" of the middle two values
 func (mm *MeanMedian) CalcMedian(n ...int) float64 {
-	sort.Ints(mm.numbers) // sort the numbers
+	sort.Float64s(mm.numbers) // sort the numbers
 
 	mNumber := len(mm.numbers) / 2
 
 	if mm.IsOdd() {
-		return float64(mm.numbers[mNumber])
+		return mm.numbers[mNumber]
 	}
 
-	return float64(mm.numbers[mNumber-1]+mm.numbers[mNumber]) / float64(2)
+	return (mm.numbers[mNumber-1] + mm.numbers[mNumber]) / 2
 }
 
 // check if the total of numbers is
